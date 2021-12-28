@@ -1,0 +1,16 @@
+{
+  "name": "cluster-to-cluster",
+  "config": {
+    "connector.class": "io.confluent.connect.replicator.ReplicatorSourceConnector",
+    "key.converter": "io.confluent.connect.replicator.util.ByteArrayConverter",
+    "value.converter": "io.confluent.connect.replicator.util.ByteArrayConverter",
+    "src.kafka.request.timeout.ms": "20000",
+    "src.kafka.bootstrap.servers": "<kafka-source-servers>",
+    "dest.kafka.sasl.mechanism": "PLAIN",
+    "dest.kafka.request.timeout.ms": "20000",
+    "dest.kafka.bootstrap.servers": "<kafka-destination-servers>",
+    "dest.kafka.retry.backoff.ms": "500",
+    "topic.regex": "<topic-regex>",
+    "tasks.max":"1"
+  }
+}
