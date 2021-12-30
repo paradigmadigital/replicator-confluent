@@ -5,12 +5,13 @@
     "key.converter": "io.confluent.connect.replicator.util.ByteArrayConverter",
     "value.converter": "io.confluent.connect.replicator.util.ByteArrayConverter",
     "src.kafka.request.timeout.ms": "20000",
-    "src.kafka.bootstrap.servers": "<kafka-source-servers>",
+    "src.kafka.bootstrap.servers": "broker-europe:29094",
     "dest.kafka.sasl.mechanism": "PLAIN",
     "dest.kafka.request.timeout.ms": "20000",
-    "dest.kafka.bootstrap.servers": "<kafka-destination-servers>",
+    "dest.kafka.bootstrap.servers": "broker-north-america:29092",
     "dest.kafka.retry.backoff.ms": "500",
-    "topic.regex": "<topic-regex>",
-    "tasks.max":"1"
+    "topic.regex": "europe.*",
+    "tasks.max":"1",
+    "topic.rename.format":"${topic}-replica"
   }
 }
