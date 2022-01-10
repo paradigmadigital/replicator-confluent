@@ -11,6 +11,7 @@ initEnvironment(){
   cd ..
 
   printf "\nCreating clusters...\n"
+  cd infra/
   docker-compose stop
   docker-compose rm -f
   docker-compose up -d
@@ -19,11 +20,14 @@ initEnvironment(){
   sleep 20
   docker exec -it connect-north-america confluent-hub install confluentinc/kafka-connect-replicator:6.1.1 --no-prompt >> /dev/null
   docker restart connect-north-america >> /dev/null
-  
 
   printf "\nRegistering Confluent Kafka Replicator connector...\n"
-  sleep 60
+  sleep 120
+  cd connector/
   curl --output /dev/null --silent -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @replicator.json >> /dev/null
+  cd ../../
+
+  printf "\nDone!\n"
 
 }
 
