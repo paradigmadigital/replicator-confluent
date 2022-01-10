@@ -1,7 +1,7 @@
 # Confluent Replicator Starter Kit
 En este repositorio se puede encontrar una PoC lista para poder empezar a trabajar con Confluent Replicator.
 
-## Requeriemientos
+## Requerimientos
 Para poder ejecutar la PoC, es necesario tener intalado Docker y Docker Compose.
 
 ## Entorno
@@ -39,7 +39,7 @@ Al finalizar la ejecución del script (tarda unos minutos), en el entorno local 
 
 ![go](images/go.png)
 
-Una vez hecho esto, ya se tiene la PoC implementada en la que se replica en tiempo real la información del topic ***europe.topic.masterdata*** del cluster ***EUROPE*** (origen) al cluster N.AMERICA (destino).
+Una vez hecho esto, ya se tiene la PoC implementada en la que se replica en tiempo real la información del *topic* ***europe.topic.masterdata*** del cluster ***EUROPE*** (origen) al cluster ***N.AMERICA*** (destino).
 
 ![show](images/show.png)
 <br/>
